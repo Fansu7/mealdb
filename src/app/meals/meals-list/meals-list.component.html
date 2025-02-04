@@ -1,0 +1,32 @@
+<app-header></app-header>
+<main>
+  <div class="letters">
+    <button
+      *ngFor="let letter of letters"
+      class="letter"
+      (click)="searchLetter(letter)"
+    >
+      {{ letter }}
+    </button>
+  </div>
+  <!-- <div *ngIf="meals?.meals?.length; else noMeals" class="meals"> -->
+  <div *ngIf="meals?.meals?.length" class="meals">
+    <app-meal-card
+      *ngFor="let meal of meals.meals"
+      [meal]="meal"
+    ></app-meal-card>
+  </div>
+
+  <section class="no-meals hidden">
+    <p>No meals found!</p>
+  </section>
+
+  <!-- <ng-template #noMeals>
+    <section class="no-meals hidden">
+      <p>No meals found!</p>
+    </section>
+  </ng-template>
+</main>
+<app-footer></app-footer> -->
+</main>
+<app-footer></app-footer>
