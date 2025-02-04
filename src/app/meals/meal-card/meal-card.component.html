@@ -1,0 +1,23 @@
+<div *ngIf="meal" class="card">
+  <img [src]="meal.mealImg" [alt]="meal.mealName" />
+  <p>{{ meal.mealName }}</p>
+  <div class="data">
+    <p class="country">{{ meal.mealArea }}</p>
+    <p class="category">{{ meal.mealCategory }}</p>
+  </div>
+  <a class="button" (click)="recipeDetail()">View recipe</a>
+</div>
+
+<div *ngIf="mealDetail">
+  <img [src]="mealDetail.mealImg" [alt]="mealDetail.mealName" />
+  <p>{{ mealDetail.mealName }}</p>
+  <div class="data">
+    <p class="country">{{ mealDetail.mealArea }}</p>
+    <p class="category">{{ mealDetail.mealCategory }}</p>
+    <p class="algo">{{ mealDetail.mealTags }}</p>
+  </div>
+  <div class="buttons">
+    <a href="{{ mealDetail.mealSource }}" class="button">Source</a>
+    <a href="{{ mealDetail.mealYoutube }}" class="button">YouTube</a>
+  </div>
+</div>
