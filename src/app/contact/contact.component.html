@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<main>
+  <h2>Contact us</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name*:</label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="Your Full Name"
+    />
+    <div class="error-hint name hidden">
+      <p>The name is required. Please fill it in.</p>
+    </div>
+
+    <label for="email">Email*:</label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="Your Email Address"
+    />
+    <div class="error-hint email hidden">
+      <p>The email is required. Please fill it in.</p>
+    </div>
+
+    <label for="subject">Subject*:</label>
+    <input
+      type="text"
+      id="subject"
+      formControlName="subject"
+      placeholder="Reason for Contacting"
+    />
+    <div class="error-hint subject hidden">
+      <p>The subject is required. Please fill it in.</p>
+    </div>
+
+    <label for="message">Message:</label>
+    <textarea
+      id="message"
+      formControlName="message"
+      rows="5"
+      placeholder="Your Message or Questions"
+    ></textarea>
+
+    <label for="newsletter">
+      <input type="checkbox" id="newsletter" formControlName="newsletter" />
+      Subscribe to our Newsletter
+    </label>
+    <div class="buttons">
+      <button type="text">Cancel</button>
+      <button type="submit">Send</button>
+    </div>
+  </form>
+</main>
+
+<app-footer></app-footer>
